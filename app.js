@@ -5,10 +5,6 @@ function getComputerChoice() {
   return choices[index];
 }
 
-let playerSelection = prompt("Pierre papier ou ciseaux?");
-const computerSelection = getComputerChoice();
-console.log(computerSelection);
-
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     console.log("égalité");
@@ -23,10 +19,14 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-console.log(playRound(playerSelection, computerSelection));
-
 function game() {
-  while (playRound < 5) {
-    playRound++;
+  let round = 0;
+  while (round < 5) {
+    let playerSelection = prompt("Pierre papier ou ciseaux?");
+    const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
+    round++;
   }
 }
+
+game();
